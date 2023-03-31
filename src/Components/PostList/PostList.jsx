@@ -3,16 +3,17 @@ import Post from "../Post/Post";
 
 const PostList = (props) => {
   return (
-    <div>
-      <Post
-        body={"body from postlist"}
-        name={"name from postlist"}
-        like={false}
-        dislike={false}
-      />
-      <Post />
-      <Post />
-      <Post />
+    <div className="post_list">
+      {props.posts.map((post) => {
+        return (
+          <Post
+            body={post.body}
+            name={post.name}
+            like={post.like}
+            dislike={post.dislike}
+          />
+        );
+      })}
     </div>
   );
 };

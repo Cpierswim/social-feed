@@ -8,6 +8,12 @@ const test = [
     like: false,
     dislike: false,
   },
+  {
+    body: "body from test2",
+    name: "name from test2",
+    like: false,
+    dislike: true,
+  },
 ];
 
 function App() {
