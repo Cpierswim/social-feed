@@ -5,6 +5,8 @@ import likeIconHover from "../../images/like-button-hover-icon.svg";
 import dislikeIconHover from "../../images/dislike-button-hover-icon.svg";
 
 import React, { useState } from "react";
+import LikeButton from "../LIkeButton/LikeButton";
+import DislikeButton from "../DislikeButton/DislikeButton";
 
 const Post = (props) => {
   return (
@@ -14,14 +16,8 @@ const Post = (props) => {
         <hr className="name_seperator" />
         <div className="post_bottom">
           <h3 className="postName">{props.name}</h3>
-          <div className="icon">
-            <img src={unselectedLikeIcon} alt="unselected like icon" />
-            <img src={likeIconHover} alt="unselected like icon" />
-          </div>
-          <div className="icon">
-            <img src={unselectedDislikeIcon} alt="unselected dislike icon" />
-            <img src={dislikeIconHover} alt="unselected dislike icon" />
-          </div>
+          <LikeButton like={props.like} />
+          <DislikeButton dislike={props.dislike} />
         </div>
       </div>
     </div>
