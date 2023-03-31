@@ -10,10 +10,10 @@ const Post = (props) => {
   return (
     <div className="alignpost">
       <div className="post">
-        <p className="post_body">Body</p>
+        <p className="post_body">{props.body}</p>
         <hr className="name_seperator" />
         <div className="post_bottom">
-          <h3 className="postName">Name</h3>
+          <h3 className="postName">{props.name}</h3>
           <div className="icon">
             <img src={unselectedLikeIcon} alt="unselected like icon" />
             <img src={likeIconHover} alt="unselected like icon" />
