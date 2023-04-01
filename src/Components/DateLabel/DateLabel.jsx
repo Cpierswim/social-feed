@@ -14,7 +14,7 @@ function getTimeString(timeStamp) {
   const temp = new Date(timeStamp);
 
   let year = temp.getFullYear();
-  let month = "Jan";
+  let month = "";
   switch (temp.getMonth()) {
     case 1:
       month = "Feb";
@@ -48,6 +48,9 @@ function getTimeString(timeStamp) {
       break;
     case 11:
       month = "Dec";
+      break;
+    default:
+      month = "Jan";
       break;
   }
   let day = temp.getDate();

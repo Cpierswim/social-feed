@@ -1,7 +1,7 @@
 import unselectedLikeIcon from "./like-button-not-selected-icon.svg";
 import likeIconHover from "./like-button-hover-icon.svg";
 import selectedLikeIcon from "./like-button-icon.svg";
-import React, { useState } from "react";
+import React from "react";
 import "./likeButton.css";
 
 const LikeButton = (props) => {

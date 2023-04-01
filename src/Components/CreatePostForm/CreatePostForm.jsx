@@ -1,5 +1,4 @@
 import "./CreatePostForm.css";
-import bootstrap from "bootstrap";
 
 const CreatePostForm = (props) => {
   return (

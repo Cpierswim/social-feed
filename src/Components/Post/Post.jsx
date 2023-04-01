@@ -1,5 +1,5 @@
 import "./post.css";
-import React, { useState } from "react";
+import React from "react";
 import LikeButton from "../LIkeButton/LikeButton";
 import DislikeButton from "../DislikeButton/DislikeButton";
 import DateLabel from "../DateLabel/DateLabel";
