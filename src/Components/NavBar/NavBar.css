@@ -7,6 +7,7 @@
   font-weight: 700;
   color: white;
   font-size: x-large;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .nav_text {
