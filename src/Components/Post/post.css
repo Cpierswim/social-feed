@@ -5,8 +5,7 @@
 }
 
 .post {
-  min-width: 60%;
-  max-width: 80%;
+  width: 100%;
   background-color: #b3e6ff;
   border-radius: 15px;
   display: flex;

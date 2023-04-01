@@ -1,0 +1,9 @@
+.post_list {
+  width: 80%;
+}
+
+.center_div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
