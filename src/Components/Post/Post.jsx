@@ -1,12 +1,8 @@
 import "./post.css";
-import unselectedLikeIcon from "../../images/like-button-not-selected-icon.svg";
-import unselectedDislikeIcon from "../../images/dislike-button-not-selected-icon.svg";
-import likeIconHover from "../../images/like-button-hover-icon.svg";
-import dislikeIconHover from "../../images/dislike-button-hover-icon.svg";
-
 import React, { useState } from "react";
 import LikeButton from "../LIkeButton/LikeButton";
 import DislikeButton from "../DislikeButton/DislikeButton";
+import DateLabel from "../DateLabel/DateLabel";
 
 const Post = (props) => {
   return (
@@ -16,6 +12,7 @@ const Post = (props) => {
         <hr className="name_seperator" />
         <div className="post_bottom">
           <h3 className="postName">{props.name}</h3>
+          <DateLabel timeStamp={props.timeStamp} />
           <LikeButton like={props.like} />
           <DislikeButton dislike={props.dislike} />
         </div>

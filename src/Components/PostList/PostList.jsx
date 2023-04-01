@@ -11,6 +11,7 @@ const PostList = (props) => {
             name={post.name}
             like={post.like}
             dislike={post.dislike}
+            timeStamp={post.timeStamp}
           />
         );
       })}
