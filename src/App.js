@@ -1,3 +1,4 @@
+import CreatePostForm from "./Components/CreatePostForm/CreatePostForm";
 import NavBar from "./Components/NavBar/NavBar";
 import PostList from "./Components/PostList/PostList";
 
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <CreatePostForm />
       <PostList posts={test} />
     </div>
   );
