@@ -10,7 +10,7 @@ function App() {
       name: "Chris",
       like: false,
       dislike: false,
-      timeStamp: Date.now(),
+      timeStamp: Date.now() - 360000,
     },
     {
       body: "Viverra orci sagittis eu volutpat odio facilisis. Egestas diam in arcu cursus euismod quis viverra nibh cras. Amet luctus venenatis lectus magna fringilla urna. Est ante in nibh mauris cursus mattis molestie.",
@@ -28,10 +28,14 @@ function App() {
     },
   ]);
 
+  function addNewPost(post) {
+    setPosts([post, ...posts]);
+  }
+
   return (
     <div className="App">
       <NavBar />
-      <CreatePostForm />
+      <CreatePostForm addNewPost={addNewPost} />
       <PostList posts={posts} />
     </div>
   );

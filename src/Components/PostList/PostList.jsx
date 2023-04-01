@@ -6,9 +6,10 @@ const PostList = (props) => {
   return (
     <div className="center_div">
       <div className="post_list">
-        {props.posts.map((post) => {
+        {props.posts.map((post, index) => {
           return (
             <Post
+              key={index}
               body={post.body}
               name={post.name}
               like={post.like}
