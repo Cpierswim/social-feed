@@ -1,4 +1,5 @@
 import "./CreatePostForm.css";
+import bootstrap from "bootstrap";
 
 const CreatePostForm = (props) => {
   return (
@@ -6,15 +7,22 @@ const CreatePostForm = (props) => {
       <div className="post_form">
         <form className="inner_form">
           <div className="full_width">
-            <label for="name">Name:</label>
-            <input type="text" id="name"></input>
-          </div>
-          <div className="full_width margin_top_5px">
-            <label for="post">Post:</label>
-            <textarea id="post" rows="4"></textarea>
+            <div className="form-floating mb-3 margin_top_10px shadow">
+              <input className="form-control" id="floatingInput" />
+              <label for="floatingInput">Name</label>
+            </div>
+            <div className="form-floating shadow">
+              <textarea
+                className="form-control bigger_text_area"
+                id="floatingTextarea"
+              ></textarea>
+              <label for="floatingTextarea">Post</label>
+            </div>
           </div>
         </form>
-        <button className="create_button">Create</button>
+        <button type="button" className="btn btn-primary create_button">
+          Create
+        </button>
       </div>
     </div>
   );
