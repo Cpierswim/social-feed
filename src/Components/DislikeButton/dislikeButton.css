@@ -2,6 +2,7 @@
   height: 23px;
   width: 23px;
   margin-left: 3px;
+  cursor: pointer;
 }
 
 .icon img:last-child {
