@@ -18,6 +18,7 @@ function getTimeString(timeStamp) {
   let month = temp.getMonth() + 1;
   let day = temp.getDate();
   let hour = temp.getHours() % 12;
+  hour = hour == 0 ? 12 : hour;
   let AMP = temp.getHours() > 12 ? "PM" : "AM";
   let minute =
     temp.getMinutes() < 10 ? "0" + temp.getMinutes() : temp.getMinutes() + "";

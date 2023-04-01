@@ -1,4 +1,7 @@
 .time_stamp {
-  width: 120px;
+  width: 100px;
+  min-width: 100px;
   font-size: small;
+  text-align: right;
+  margin-right: 4px;
 }
