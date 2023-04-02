@@ -33,15 +33,10 @@ function App() {
   }
 
   function toggleLike(post) {
-    console.log("Before change");
-    console.log(post);
-
     for (let i = 0; i < posts.length; i++) {
       if (posts[i] === post) {
         posts[i].like = !posts[i].like;
         posts[i].dislike = false;
-        console.log("After change");
-        console.log(post);
         break;
       }
     }
