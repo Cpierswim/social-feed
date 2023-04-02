@@ -33,15 +33,35 @@ function App() {
   }
 
   function toggleLike(post) {
-    for (let i = 0; i < posts.length; i++) {
+    /*for (let i = 0; i < posts.length; i++) {
       if (posts[i] === post) {
         posts[i].like = !posts[i].like;
         posts[i].dislike = false;
         break;
       }
+    }*/
+
+    /*const test = posts.map((checkingPost) => {
+      if (checkingPost === post) {
+        checkingPost.body = checkingPost.body;
+        checkingPost.name = checkingPost.name;
+        checkingPost.timeStamp = checkingPost.timeStamp;
+        checkingPost.like = !checkingPost.like;
+        checkingPost.dislike = false;
+      }
+    });*/
+
+    const test = [];
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i] !== post) test.push(posts[i]);
+      else {
+        post.like = !post.like;
+        post.dislike = false;
+        test.push(post);
+      }
     }
 
-    setPosts(posts);
+    setPosts(test);
   }
 
   return (

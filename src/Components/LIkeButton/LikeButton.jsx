@@ -5,7 +5,7 @@ import React from "react";
 import "./likeButton.css";
 
 const LikeButton = (props) => {
-  function handleClick(event) {
+  function handleClick() {
     props.toggleLike(props.post);
   }
 
