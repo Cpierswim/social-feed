@@ -2,7 +2,6 @@ import unselectedDislikeIcon from "./dislike-button-not-selected-icon.svg";
 import dislikeIconHover from "./dislike-button-hover-icon.svg";
 import selectedDisikeIcon from "./dislike-button-icon.svg";
 import React from "react";
-import "./dislikeButton.css";
 
 const DislikeButton = (props) => {
   function handleClick() {
