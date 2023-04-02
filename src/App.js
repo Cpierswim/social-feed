@@ -51,24 +51,42 @@ function App() {
       }
     });*/
 
-    const test = [];
+    const temp = [];
     for (let i = 0; i < posts.length; i++) {
-      if (posts[i] !== post) test.push(posts[i]);
+      if (posts[i] !== post) temp.push(posts[i]);
       else {
         post.like = !post.like;
         post.dislike = false;
-        test.push(post);
+        temp.push(post);
       }
     }
 
-    setPosts(test);
+    setPosts(temp);
+  }
+
+  function toggleDislike(post) {
+    const temp = [];
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i] !== post) temp.push(posts[i]);
+      else {
+        post.like = false;
+        post.dislike = !post.dislike;
+        temp.push(post);
+      }
+    }
+
+    setPosts(temp);
   }
 
   return (
     <div className="App">
       <NavBar />
       <CreatePostForm addNewPost={addNewPost} />
-      <PostList posts={posts} toggleLike={toggleLike} />
+      <PostList
+        posts={posts}
+        toggleLike={toggleLike}
+        toggleDislike={toggleDislike}
+      />
     </div>
   );
 }

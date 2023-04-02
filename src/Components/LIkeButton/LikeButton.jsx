@@ -11,7 +11,7 @@ const LikeButton = (props) => {
 
   return (
     <div className="icon" onClick={handleClick}>
-      {props.like ? (
+      {props.post.like ? (
         <img src={selectedLikeIcon} alt="selected like icon" />
       ) : (
         <img src={unselectedLikeIcon} alt="unselected like icon" />

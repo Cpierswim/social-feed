@@ -13,12 +13,11 @@ const Post = (props) => {
         <div className="post_bottom">
           <h3 className="postName">{props.post.name}</h3>
           <DateLabel timeStamp={props.post.timeStamp} />
-          <LikeButton
-            like={props.post.like}
+          <LikeButton post={props.post} toggleLike={props.toggleLike} />
+          <DislikeButton
             post={props.post}
-            toggleLike={props.toggleLike}
+            toggleDislike={props.toggleDislike}
           />
-          <DislikeButton dislike={props.post.dislike} />
         </div>
       </div>
     </div>

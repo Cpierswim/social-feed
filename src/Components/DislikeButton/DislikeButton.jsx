@@ -5,9 +5,13 @@ import React from "react";
 import "./dislikeButton.css";
 
 const DislikeButton = (props) => {
+  function handleClick() {
+    props.toggleDislike(props.post);
+  }
+
   return (
-    <div className="icon">
-      {props.dislike ? (
+    <div className="icon" onClick={handleClick}>
+      {props.post.dislike ? (
         <img src={selectedDisikeIcon} alt="selected dislike icon" />
       ) : (
         <img src={unselectedDislikeIcon} alt="unselected dislike icon" />
