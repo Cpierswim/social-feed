@@ -5,8 +5,12 @@ import React from "react";
 import "./likeButton.css";
 
 const LikeButton = (props) => {
+  function handleClick(event) {
+    props.likePost(props.post);
+  }
+
   return (
-    <div className="icon">
+    <div className="icon" onClick={handleClick}>
       {props.like ? (
         <img src={selectedLikeIcon} alt="selected like icon" />
       ) : (
