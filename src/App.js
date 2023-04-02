@@ -32,13 +32,13 @@ function App() {
     setPosts([post, ...posts]);
   }
 
-  function likePost(post) {
+  function toggleLike(post) {
     console.log("Before change");
     console.log(post);
 
     for (let i = 0; i < posts.length; i++) {
       if (posts[i] === post) {
-        posts[i].like = true;
+        posts[i].like = !posts[i].like;
         posts[i].dislike = false;
         console.log("After change");
         console.log(post);
@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       <NavBar />
       <CreatePostForm addNewPost={addNewPost} />
-      <PostList posts={posts} likePost={likePost} />
+      <PostList posts={posts} toggleLike={toggleLike} />
     </div>
   );
 }

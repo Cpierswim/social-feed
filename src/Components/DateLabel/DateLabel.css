@@ -4,4 +4,10 @@
   font-size: small;
   text-align: right;
   margin-right: 4px;
+  display: table;
+}
+
+.temppp {
+  vertical-align: middle;
+  display: table-cell;
 }

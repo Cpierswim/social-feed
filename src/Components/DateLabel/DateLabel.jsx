@@ -3,7 +3,7 @@ import "./DateLabel.css";
 const DateLabel = (props) => {
   return (
     <div className="time_stamp">
-      <p>{getTimeString(props.timeStamp)}</p>
+      <p className="temppp">{getTimeString(props.timeStamp)}</p>
     </div>
   );
 };

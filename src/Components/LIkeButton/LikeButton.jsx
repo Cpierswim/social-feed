@@ -6,7 +6,7 @@ import "./likeButton.css";
 
 const LikeButton = (props) => {
   function handleClick(event) {
-    props.likePost(props.post);
+    props.toggleLike(props.post);
   }
 
   return (

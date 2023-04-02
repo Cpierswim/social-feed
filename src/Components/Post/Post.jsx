@@ -1,14 +1,10 @@
 import "./post.css";
-import React, { useState } from "react";
+import React from "react";
 import LikeButton from "../LIkeButton/LikeButton";
 import DislikeButton from "../DislikeButton/DislikeButton";
 import DateLabel from "../DateLabel/DateLabel";
 
 const Post = (props) => {
-  const [post, setPost] = useState("");
-
-  function updatePost(postToUpdate) {}
-
   return (
     <div className="alignpost">
       <div className="post">
@@ -20,7 +16,7 @@ const Post = (props) => {
           <LikeButton
             like={props.post.like}
             post={props.post}
-            likePost={props.likePost}
+            toggleLike={props.toggleLike}
           />
           <DislikeButton dislike={props.post.dislike} />
         </div>
