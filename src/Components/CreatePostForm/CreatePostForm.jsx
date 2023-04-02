@@ -12,6 +12,8 @@ const CreatePostForm = (props) => {
     let post_check = post.trim();
 
     if (name_check !== "" && post_check !== "") {
+      //document.getElementById("floatingInput").value = "";
+      //document.getElementById("floatingTextarea").value = "";
       let newPost = {
         body: post_check,
         name: name_check,
@@ -20,6 +22,8 @@ const CreatePostForm = (props) => {
         timeStamp: Date.now(),
       };
 
+      setName("");
+      setPost("");
       props.addNewPost(newPost);
     }
   }

@@ -4,7 +4,9 @@
   min-height: 23px;
   min-width: 23px;
   margin-left: 3px;
+  margin-top: -4px;
   display: table;
+  border-radius: 50%;
 }
 
 .icon img:last-child {
