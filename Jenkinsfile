@@ -23,10 +23,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
 
-                sh '''
-                    docker build -t cpierswim/social-feed:2.0.0 .
+                sh """
+                    docker build -t cpierswim/social-feed:2.0.$BUILD_NUMBER .
                     docker images
-                '''
+                """
 
             }
         }
@@ -39,7 +39,7 @@ pipeline {
 					sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
                 }
 
-                sh 'docker push cpierswim/social-feed:2.0.0'
+                sh "docker push cpierswim/social-feed:2.0.$BUILD_NUMBER"
 
             }
         }
