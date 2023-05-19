@@ -52,9 +52,10 @@ pipeline {
                     sh """
                         SSH_COMMAND="ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34"
                         CONTAINER_EXISTS_AND_IS_RUNNING="docker ps -q -f name='docker rm hosted-social-feed-app'"
-                        CONTAINER_EXISTS_AND_IS_NOT_RUNNING="docker ps -a -q -f name='docker rm hosted-social-feed-app'"
-                        echo "CONTAINER_EXISTS_AND_IS_RUNNING=${CONTAINER_EXISTS_AND_IS_RUNNING}"
-                        echo "CONTAINER_EXISTS_AND_IS_RUNNING=${CONTAINER_EXISTS_AND_IS_NOT_RUNNING}"
+                        CONTAINER_EXISTS="docker ps -a -q -f name='docker rm hosted-social-feed-app'"
+                        echo "CONTAINER_EXISTS_AND_IS_RUNNING=\$CONTAINER_EXISTS_AND_IS_RUNNING"
+                        echo "CONTAINER_EXISTS=\$CONTAINER_EXISTS"
+                        if(C)
                         \$SSH_COMMAND "docker stop hosted-social-feed-app && docker rm hosted-social-feed-app"
                         \$SSH_COMMAND "docker pull cpierswim/social-feed:2.0.$BUILD_NUMBER"
                         \$SSH_COMMAND "docker run -d -p 80:80 --name hosted-social-feed-app cpierswim/social-feed:2.0.$BUILD_NUMBER"
