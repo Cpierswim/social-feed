@@ -24,7 +24,7 @@ pipeline {
             steps {
 
                 sh '''
-                    docker build -t cpierswim/social-feed:2.0.0
+                    docker build -t cpierswim/social-feed:2.0.0 .
                     docker images
                 '''
 
