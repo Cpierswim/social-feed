@@ -49,6 +49,10 @@ pipeline {
                 sh 'echo "Deploying to EC2 instance..."'
 
                 sshagent(['social-feed-linux-kp-shh-credentials']) {
+
+                    def CONTAINER_EXISTS_AND_IS_RUNNING = "ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34 docker ps -q -f name='docker rm hosted-social-feed-app'"
+                    sh "echo 'another test...CONTAINER_EXISTS_AND_IS_RUNNING=${CONTAINER_EXISTS_AND_IS_RUNNING}'"
+
                     sh """
                         SSH_COMMAND="ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34"
                         CONTAINER_EXISTS_AND_IS_RUNNING="docker ps -q -f name='docker rm hosted-social-feed-app'"
