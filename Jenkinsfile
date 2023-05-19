@@ -39,7 +39,7 @@ pipeline {
 					sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
                 }
 
-                sh 'docker push cpierswim/react-jenkins-docker:2.0.0'
+                sh 'docker push cpierswim/social-feed:2.0.0'
 
             }
         }
