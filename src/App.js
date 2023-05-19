@@ -33,14 +33,6 @@ function App() {
   }
 
   function toggleLike(post) {
-    /*for (let i = 0; i < posts.length; i++) {
-      if (posts[i] === post) {
-        posts[i].like = !posts[i].like;
-        posts[i].dislike = false;
-        break;
-      }
-    }*/
-
     /*const test = posts.map((checkingPost) => {
       if (checkingPost === post) {
         checkingPost.body = checkingPost.body;
@@ -52,6 +44,7 @@ function App() {
     });*/
 
     const temp = [];
+    console.log(post);
     for (let i = 0; i < posts.length; i++) {
       if (posts[i] !== post) temp.push(posts[i]);
       else {

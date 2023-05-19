@@ -3,7 +3,9 @@ import "./NavBar.css";
 const NavBar = (props) => {
   return (
     <nav className="NavBar">
-      <p className="nav_text">socialfeed</p>
+      <p id="appName" className="nav_text">
+        socialfeed
+      </p>
     </nav>
   );
 };

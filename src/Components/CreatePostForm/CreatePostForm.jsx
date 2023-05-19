@@ -39,6 +39,7 @@ const CreatePostForm = (props) => {
                 id="floatingInput"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
+                placeholder="Name"
               />
               <label htmlFor="floatingInput">Name</label>
             </div>
@@ -48,6 +49,7 @@ const CreatePostForm = (props) => {
                 id="floatingTextarea"
                 value={post}
                 onChange={(event) => setPost(event.target.value)}
+                placeholder="Post"
               ></textarea>
               <label htmlFor="floatingTextarea">Post</label>
             </div>
