@@ -43,5 +43,20 @@ pipeline {
 
             }
         }
+
+        stage('Deploy New Image to AWS EC2'){
+            steps{
+                sh 'echo "Deploying to EC2 instance..."'
+
+                sshagent(['social-feed-linux-kp-shh-credentials']) {
+                    sh """
+                        SSH_COMMAND = "ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34"
+                        \$SSH_COMMAND "docker stop hosted-social-feed-app && docker rm hosted-social-feed-app"
+                        \$SSH_COMMAND "docker pull cpierswim/social-feed:2.0.$BUILD_NUMBER"
+                        \$SSH_COMMAND "docker run -d -p 80:80 --name hosted-social-feed-app cpierswim/social-feed:2.0.$BUILD_NUMBER"
+                    """
+                }
+            }
+        }
     }
 }
