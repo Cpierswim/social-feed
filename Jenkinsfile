@@ -50,17 +50,22 @@ pipeline {
 
                 sshagent(['social-feed-linux-kp-shh-credentials']) {
 
-                    def CONTAINER_EXISTS_AND_IS_RUNNING = "ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34 docker ps -q -f name='docker rm hosted-social-feed-app'"
-                    sh "echo 'another test...CONTAINER_EXISTS_AND_IS_RUNNING=${CONTAINER_EXISTS_AND_IS_RUNNING}'"
+                    script{
+                        // Conditionally checking if container "poke-search-hosted" exists within the Docker container
+                        def containerName = "hosted-social-feed-app"
+                        def containerDoesExist = sh(returnStdout: true, script: "ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34 \"docker ps -aqf 'name=${containerName}'\"").trim()
+                        // If a container matching the name exists, remove it.  Otherwise echo no match found, and continue with deployment
+                        if (containerDoesExist){
+                            echo "Container ${containerName} located.  Removing container..."
+                            sh "ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34 \"docker stop ${containerName} && docker rm ${containerName}\""
+                        }
+                        else {
+                            echo "No container found matching ${containerName}"
+                        }
+                    }
 
                     sh """
-                        SSH_COMMAND="ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34"
-                        CONTAINER_EXISTS_AND_IS_RUNNING="docker ps -q -f name='docker rm hosted-social-feed-app'"
-                        CONTAINER_EXISTS="docker ps -a -q -f name='docker rm hosted-social-feed-app'"
-                        echo "CONTAINER_EXISTS_AND_IS_RUNNING=\$CONTAINER_EXISTS_AND_IS_RUNNING"
-                        echo "CONTAINER_EXISTS=\$CONTAINER_EXISTS"
-                        if(C)
-                        \$SSH_COMMAND "docker stop hosted-social-feed-app && docker rm hosted-social-feed-app"
+                        SSH_COMMAND="ssh -o StrictHostKeyChecking=no ubuntu@18.191.200.34"Ks
                         \$SSH_COMMAND "docker pull cpierswim/social-feed:2.0.$BUILD_NUMBER"
                         \$SSH_COMMAND "docker run -d -p 80:80 --name hosted-social-feed-app cpierswim/social-feed:2.0.$BUILD_NUMBER"
                     """
